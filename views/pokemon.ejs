@@ -1,0 +1,26 @@
+<% include partials/header %>
+
+<%
+function jsUcfirst(string) 
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+} %>
+<h1>#<%= pokemon.game_indices[0].game_index %> - <%= jsUcfirst(pokemon.species.name) %> </h1>
+<img src="<%= pokemon.sprites.front_default %>">
+<ul>
+<li><strong>Base Stats</strong></li>
+<% pokemon.stats.forEach(element =>{ %>
+    <li><%= element.stat.name %>: <%= element.base_stat %></li>
+<% }); %>
+</ul>
+
+<ul>
+<li><strong>Move - Level Learned</strong></li>
+<% pokemon.moves.forEach(element =>{ 
+    if(element.version_group_details[0].move_learn_method.name == "level-up"){ %>
+<li><%= element.move.name %> - <%= element.version_group_details[0].level_learned_at %></li>
+<% }}) %>
+</ul>
+
+
+<% include partials/footer %>

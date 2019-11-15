@@ -1,0 +1,12 @@
+<% include partials/header %>
+
+<h1>Search for a Pokemon by name or ID</h1>
+<form class="ui form" action="/search/" method="POST">
+            <div class="field">
+                <label>Name or ID</label>
+                <input type="text" name="pokeID" placeholder="Pikachu" required>
+            </div>
+            <input class="circular big ui icon button violet" type="submit">
+        </form>
+
+<% include partials/footer %>

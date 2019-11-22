@@ -26,10 +26,20 @@ app.get("/search/", function(req,res){
 app.post("/search/", function(req,res){
     if (!req.body) return res.render("/search/");
     var pokeID = req.body.pokeID.toLowerCase();
-    getPokemon(pokeID,function(err, result){
-        if(err){res.render("/search/")}
-        res.render("pokemon", {pokemon: result});
-    });
+    if(pokeID == ""){
+        res.render("search");
+    }
+    else {
+        getPokemon(pokeID,function(err, result){
+            if(err){res.render("search")}
+            else if(result == "Not Found"){
+                res.render("search");
+            }
+            else{
+                res.render("pokemon", {pokemon: result});
+            }
+        });
+    }
 });
 
 

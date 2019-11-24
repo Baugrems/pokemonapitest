@@ -58,5 +58,5 @@ function getPokemon(id, callback){
 }
 
 //Listener to turn website on
-app.listen(process.env.PORT);
+app.listen(process.env.PORT, process.env.IP);
 console.log("App is listening");

@@ -4,7 +4,7 @@
   "description": "pokemon api app",
   "main": "app.js",
   "dependencies": {
-    "ejs": "^2.7.2",
+    "ejs": "^3.1.7",
     "express": "^4.17.1",
     "gulp": "^4.0.2",
     "request": "^2.88.0"
